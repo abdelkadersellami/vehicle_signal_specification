@@ -1,6 +1,6 @@
 .PHONY: clean all preprocessing test
 
-all: preprocessing yaml
+all: preprocessing yaml truck bus
 
 TOOLSDIR ?= ./vss-tools
 VSS_VERSION ?= 0.0
@@ -35,6 +35,12 @@ preprocessing:
 
 yaml:
 	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -o spec/vss.yaml
+
+truck:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -o spec/truck.yaml
+
+bus:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -o spec/bus.yaml
 
 test:
 	$(PYTHON) -m pytest $(TEST_DIR) -v
