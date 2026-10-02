@@ -1,8 +1,12 @@
-.PHONY: clean all preprocessing test
+.PHONY	 : clean all preprocessing test
 
-all: preprocessing yaml truckOverlay busOverlay
-truck : preprocessing truckOverlay
-bus : preprocessing busOverlay
+all		 : preprocessing yaml truckOverlay busOverlay truckIceOverlay truckBevOverlay busIceOverlay busBevOverlay
+truck 	 : preprocessing truckOverlay
+bus 	 : preprocessing busOverlay
+truckIce : preprocessing truckIceOverlay
+truckBev : preprocessing truckBevOverlay
+busIce 	 : preprocessing busIceOverlay
+busBev 	 : preprocessing busBevOverlay
 
 TOOLSDIR ?= ./vss-tools
 VSS_VERSION ?= 0.0
@@ -41,8 +45,20 @@ yaml:
 truckOverlay:
 	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -o spec/aceaVssTruck.yaml
 
+truckIceOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -l profile/aceaIce.vspec -o spec/aceaVssIceTruck.yaml
+
+truckBevOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -l profile/aceaBev.vspec -o spec/aceaVssBevTruck.yaml
+
 busOverlay:
 	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -o spec/aceaVssBus.yaml
+
+busIceOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -l profile/aceaIce.vspec -o spec/aceaVssIceBus.yaml
+
+busBevOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -l profile/aceaBev.vspec -o spec/aceaVssBevBus.yaml
 
 test:
 	$(PYTHON) -m pytest $(TEST_DIR) -v
