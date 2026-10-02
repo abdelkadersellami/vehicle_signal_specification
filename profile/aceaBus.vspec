@@ -9,7 +9,8 @@
 Vehicle.Powertrain.CombustionEngine.EnginePercentLoadAtCurrentSpeed:
   delete: True
 
-Vehicle.Service.DistanceToService:
+Vehicle.Service:
+  type: branch
   delete: True
 
 Vehicle.Powertrain.PowerTakeOffs:

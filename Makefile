@@ -1,6 +1,8 @@
 .PHONY: clean all preprocessing test
 
-all: preprocessing yaml truck bus
+all: preprocessing yaml truckOverlay busOverlay
+truck : preprocessing truckOverlay
+bus : preprocessing busOverlay
 
 TOOLSDIR ?= ./vss-tools
 VSS_VERSION ?= 0.0
@@ -34,13 +36,13 @@ preprocessing:
 	$(PYTHON) $(BUILD_SCRIPT) $(VFLAG)
 
 yaml:
-	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -o spec/vss.yaml
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -o spec/aceaVss.yaml
 
-truck:
-	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -o spec/truck.yaml
+truckOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaTruck.vspec -o spec/aceaVssTruck.yaml
 
-bus:
-	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -o spec/bus.yaml
+busOverlay:
+	vspec export yaml $(COMMON_ARGS) $(COMMON_VSPEC_ARG) -l profile/aceaBus.vspec -o spec/aceaVssBus.yaml
 
 test:
 	$(PYTHON) -m pytest $(TEST_DIR) -v
