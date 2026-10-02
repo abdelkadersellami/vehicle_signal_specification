@@ -6,6 +6,10 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
+# Battery Electric Vehicle (BEV) specific profile
+# Remove combustion engine, fuel system, and clutch pedal signals for BEVs
+# The following sections define the specific signals to be removed for BEV Vehicles.
+
 Vehicle.Powertrain.CombustionEngine:
   type: branch
   delete: True

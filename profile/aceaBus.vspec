@@ -6,6 +6,10 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
+# Bus-specific profile
+# Remove signals not relevant for buses according to the ACEA FMS-Standard version 05 11.11.2025.
+# The following sections define the specific signals to be removed for Buses.
+
 Vehicle.Powertrain.CombustionEngine.EnginePercentLoadAtCurrentSpeed:
   delete: True
 

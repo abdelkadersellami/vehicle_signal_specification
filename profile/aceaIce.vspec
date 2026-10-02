@@ -6,6 +6,10 @@
 #
 # SPDX-License-Identifier: MPL-2.0
 
+# Internal Combustion Engine (ICE) specific profile
+# Remove traction battery signals for ICE vehicles
+# The following sections define the specific signals to be removed for ICE Vehicles.
+
 Vehicle.Powertrain.TractionBattery:
   type: branch
   delete: True
