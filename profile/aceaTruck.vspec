@@ -1,0 +1,71 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+Vehicle.Body:
+  type: branch
+  delete: True
+
+Vehicle.CurrentDateTime:
+  delete: True
+
+Vehicle.Chassis.Suspension:
+  type: branch
+  delete: True
+
+Vehicle.Chassis.SteeringWheel.Angle:
+  delete: True
+
+Vehicle.Acceleration:
+  type: branch
+  delete: True
+
+Vehicle.Cabin.DriverCompartment:
+  type: branch
+  delete: True
+
+Vehicle.Exterior:
+  type: branch
+  delete: True
+
+Vehicle.Powertrain.TractionBattery.ThermalManagementSystemMode:
+  delete: True
+
+Vehicle.Powertrain.TractionBattery.TotalEnergyThroughput:
+  delete: True
+
+Vehicle.Powertrain.PropulsionSystem:
+  type: branch
+  delete: True
+
+Vehicle.Powertrain.CombustionEngine.EOP:
+  delete: True
+
+Vehicle.Powertrain.CombustionEngine.EngineCoolant:
+  type: branch
+  delete: True
+
+Vehicle.Powertrain.CombustionEngine.EngineOil:
+  type: branch
+  delete: True
+
+Vehicle.Powertrain.Alternators:
+  type: branch
+  delete: True
+
+Vehicle.Powertrain.Transmission.SelectedGear:
+  delete: True
+
+Vehicle.Powertrain.Transmission.CurrentGear:
+  delete: True
+
+Vehicle.Powertrain.Transmission.Temperature:
+  delete: True
+
+Vehicle.Powertrain.TractionBattery.StateOfCharge:
+  type: branch
+  delete: True
