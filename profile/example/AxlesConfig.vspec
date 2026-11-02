@@ -7,8 +7,7 @@
 # SPDX-License-Identifier: MPL-2.0
 
 #
-# This overlay is an example on how to configure the Axle/Wheel combination for a Truck
-#
+# This overlay is an example on how to configure the Axle/Wheel combination for a Vehicle
 #
 #              Pos6  Pos7  Pos9  Pos10
 # Axle Row1:     -     O     O      -
@@ -16,19 +15,57 @@
 # Axle Row3:     O     O     O      O
 # Axle Row4:     -     O     O      -
 #
-#
+
+Vehicle.Chassis.AxleCount:
+  type: attribute
+  description: Number of axles on the vehicle
+  datatype: uint8
+  default: 4
 
 Vehicle.Chassis.Axle:
   instances: ["Row1", "Row2", "Row3", "Row4"]
+  type: branch
 
-Vehicle.Chassis.Axle.Row1:
+Vehicle.Chassis.Axle.Row1.WheelCount:
+  type: attribute
+  description: Number of wheels on the axle
+  datatype: uint8
+  default: 2
+
+Vehicle.Chassis.Axle.Row1.Wheel:
   instances: ["Pos7", "Pos9"]
+  type: branch
+  description: Wheel signals for axle
 
-Vehicle.Chassis.Axle.Row2:
+Vehicle.Chassis.Axle.Row2.WheelCount:
+  type: attribute
+  description: Number of wheels on the axle
+  datatype: uint8
+  default: 4
+
+Vehicle.Chassis.Axle.Row2.Wheel:
   instances: ["Pos6", "Pos7", "Pos9", "Pos10"]
+  type: branch
+  description: Wheel signals for axle
 
-Vehicle.Chassis.Axle.Row3:
+Vehicle.Chassis.Axle.Row3.WheelCount:
+  type: attribute
+  description: Number of wheels on the axle
+  datatype: uint8
+  default: 4
+
+Vehicle.Chassis.Axle.Row3.Wheel:
   instances: ["Pos6", "Pos7", "Pos9", "Pos10"]
+  type: branch
+  description: Wheel signals for axle
 
-Vehicle.Chassis.Axle.Row4:
+Vehicle.Chassis.Axle.Row4.WheelCount:
+  type: attribute
+  description: Number of wheels on the axle
+  datatype: uint8
+  default: 2
+
+Vehicle.Chassis.Axle.Row4.Wheel:
   instances: ["Pos7", "Pos9"]
+  type: branch
+  description: Wheel signals for axle
