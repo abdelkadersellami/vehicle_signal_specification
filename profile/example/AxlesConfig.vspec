@@ -1,0 +1,34 @@
+# Copyright (c) 2026 Contributors to COVESA
+#
+# This program and the accompanying materials are made available under the
+# terms of the Mozilla Public License 2.0 which is available at
+# https://www.mozilla.org/en-US/MPL/2.0/
+#
+# SPDX-License-Identifier: MPL-2.0
+
+#
+# This overlay is an example on how to configure the Axle/Wheel combination for a Truck
+#
+#
+#              Pos6  Pos7  Pos9  Pos10
+# Axle Row1:     -     O     O      -
+# Axle Row2:     O     O     O      O
+# Axle Row3:     O     O     O      O
+# Axle Row4:     -     O     O      -
+#
+#
+
+Vehicle.Chassis.Axle:
+  instances: ["Row1", "Row2", "Row3", "Row4"]
+
+Vehicle.Chassis.Axle.Row1:
+  instances: ["Pos7", "Pos9"]
+
+Vehicle.Chassis.Axle.Row2:
+  instances: ["Pos6", "Pos7", "Pos9", "Pos10"]
+
+Vehicle.Chassis.Axle.Row3:
+  instances: ["Pos6", "Pos7", "Pos9", "Pos10"]
+
+Vehicle.Chassis.Axle.Row4:
+  instances: ["Pos7", "Pos9"]
